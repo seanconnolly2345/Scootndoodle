@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
-import Home from "./views/Home/Home"
+import { Home } from "./views/Home/Home"
 import NotFound from "./views/NotFound"
 import Header from "./components/Header/Header"
 import Footer from './components/Footer/Footer';
+import Container from 'react-bootstrap/Container'
 
 
 const App = () => {
