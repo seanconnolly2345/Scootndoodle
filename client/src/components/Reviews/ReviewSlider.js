@@ -43,13 +43,13 @@ export default ({data}) => {
         autoplay: true,
         dots: true,
         infinite: true,
-        speed: 500,
-        slidesToShow: 1,
+        speed: 1000,
+        slidesToShow: 3,
         slidesToScroll: 1
     }
 
     return (
-        <Containter>
+        <Containter className='slider-container'>
             <Slider {...settings}>
                 {reviewList}
             </Slider>
