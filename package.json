@@ -31,8 +31,10 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "react-bootstrap": "^1.0.0-beta.14",
+    "react-slick": "^0.25.2",
     "reactstrap": "^8.1.1",
     "should": "^13.2.3",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "supertest": "^4.0.2"
   },
