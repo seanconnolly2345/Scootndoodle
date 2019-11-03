@@ -7,34 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ReviewSlider.css'
 
-//class SliderLeftArrow extends React.Component {
-//    render() {
-//        return (
-//            <a
-//                href="#"
-//                className="carousel__arrow carousel__arrow--left"
-//                onClick={this.props.onClick}
-//            >
-//            <span className="fa fa-2x fa-angle-left" />
-//            </a>
-//        )
-//    }
-//}
-
-//class SliderRightArrow extends React.Component {
-//    render() {
-//        return (
-//            <a
-//                href="#"
-//                className="carousel__arrow carousel__arrow--right"
-//                onClick={this.props.onClick}
-//            >
-//            <span className="fa fa-2x fa-angle-right" />
-//            </a>
-//        )
-//    }
-//}
-
 export default ({data}) => {
     const reviewList = data.map(review => {
         return <ReviewCard reviewData={review} />
@@ -42,6 +14,7 @@ export default ({data}) => {
 
     const settings = {
         autoplay: true,
+        autoplaySpeed: 4000,
         dots: true,
         infinite: true,
         speed: 1000,
