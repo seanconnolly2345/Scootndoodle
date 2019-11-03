@@ -8,13 +8,7 @@ import Col from 'react-bootstrap/Col'
 export const Media = () => (
     <Container>
         This will be the media section.
-        <Row>
-            <Col>
-                <Instagram />
-            </Col>
-            <Col>
-                <Facebook />
-            </Col>
-        </Row>
+        <Instagram />
+        <Facebook />
     </Container>
 )
