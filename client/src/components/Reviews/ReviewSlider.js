@@ -5,6 +5,7 @@ import Containter from 'react-bootstrap/Container'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import './ReviewSlider.css'
 
 //class SliderLeftArrow extends React.Component {
 //    render() {
