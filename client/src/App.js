@@ -7,10 +7,12 @@ import Header from "./components/Header/Header"
 import Footer from './components/Footer/Footer';
 import Container from 'react-bootstrap/Container'
 
+import './App.css'
+
 
 const App = () => {
   return (
-    <div>
+    <div className='page-container'>
       <Header />
       <Switch>
         <Route exact path="/Home" component={Home} />
