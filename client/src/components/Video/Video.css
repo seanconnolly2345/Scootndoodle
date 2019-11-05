@@ -5,16 +5,8 @@
     overflow: hidden;
 }
 
-.video-text {
+.video-container .video-text {
     background: rgba(0,0,0,0);
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0; right: 0; bottom: 0; left: 0;
-}
-
-.video-text > Col {
-    text-align: center;
-    justify-content: center;
+    top: 10%; right: 10%; bottom: 10%; left: 10%;
 }

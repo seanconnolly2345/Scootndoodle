@@ -7,7 +7,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <Container>
+        <React.Fragment>
             <div className='footer-container'>
                 <Row className="justify-content-center">
                     this is the footer
@@ -16,7 +16,7 @@ const Footer = () => {
                     media links here
                 </Row>
             </div>
-        </Container>
+        </React.Fragment>
     )
 }
 

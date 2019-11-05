@@ -1,10 +1,8 @@
-'use strict'
-
 import React from 'react'
 import Demo from '../../assets/demo.mov'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
+//import Container from 'react-bootstrap/Container'
 import './Video.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,12 +13,13 @@ export const Video = () => (
             <source src={Demo} type="video/ogg" />
             Your browswer does not support this video.
         </video>
+
         <div className='video-text'>
             <Col>
-                <Row className='justify-content-center'>
-                    <h1 className='display-3'>Fun and Engaging Writing Support!</h1>
+                <Row className='justify-content-center justify-text-center'>
+                    <h1 className='display-5'>Fun and Engaging Writing Support!</h1>
                 </Row>
-                <Row className='justify-content-center'>
+                <Row className='justify-content-center justify-text-center'>
                     <p>
                         Used by pre-writers, differently developing doodlers and
                         even adults! The earlier children master written communication
