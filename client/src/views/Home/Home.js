@@ -8,19 +8,17 @@ import ReviewSlider from '../../components/Reviews/ReviewSlider';
 import sliderData from '../../assets/reviews'
 import Footer from '../../components/Footer/Footer';
 import Navigation from '../../components/Navigation/Navigation';
-import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 //import Container from 'react-bootstrap/Container'
 
 export const Home = () => (
     <React.Fragment>
         <Navigation />
         <Video />
-        <Col>
-            <ReviewSlider data={sliderData}/>
-        </Col>
-            <ShopPreview />
-            <About />
-            <Media />
+        <ReviewSlider data={sliderData}/>
+        <ShopPreview />
+        <About />
+        <Media />
     </React.Fragment>
 )
 
