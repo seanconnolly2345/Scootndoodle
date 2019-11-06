@@ -18,7 +18,7 @@ expressRouter.post('/feed', (req, res) => {
   })
   .catch(err => {
     if (err) {
-      sendErrorReport(`bakcend/api/instagram - /feed - Error while calling the getGalleryFeed-function within the backend/helper/instagram-script | Err: ${err}`)
+      sendErrorReport(`backend/api/instagram - /feed - Error while calling the getGalleryFeed-function within the backend/helper/instagram-script | Err: ${err}`)
     }
     res.json({status: false})
   })

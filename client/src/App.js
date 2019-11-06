@@ -19,7 +19,7 @@ const App = () => {
           <Redirect to="/Home" />
         </Route>
         <Route exact path='/Shop' component={Shop} />
-        <Route exact path='/Media' component={Media} />
+        <Route exact path="/Media" component={Media} />
         <Route component={NotFound}/>
       </Switch>
       <Footer />

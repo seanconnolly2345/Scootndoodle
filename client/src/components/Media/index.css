@@ -1,0 +1,11 @@
+.centered {
+        display: flex;
+        grid-column-gap: 50px;
+        justify-content: center;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 50px;
+}
