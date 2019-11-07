@@ -9,3 +9,9 @@
     display: grid;
     grid-column-gap: 50px;
 }
+
+.instagram-feed{
+    width:100%;
+    border:0;
+    overflow:hidden;
+}
