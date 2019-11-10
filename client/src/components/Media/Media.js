@@ -10,10 +10,7 @@ import InstaGrid from './InstaGrid'
 class Media extends React.Component {
     render() {
         return (
-            <div>
-                <div id="media" />
-                <InstaGrid account="scootscribbledoodletest" numberOfMediaElements={6} />
-            </div>
+            <InstaGrid account="scootscribbledoodletest" numberOfMediaElements={9} />
         );
     }
 }
