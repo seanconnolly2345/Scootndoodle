@@ -7,8 +7,6 @@ import NotFound from "./views/NotFound"
 import Header from "./components/Header/Header"
 import Footer from './components/Footer/Footer';
 import Container from 'react-bootstrap/Container'
-import Navigation from "./components/Navigation/Navigation"
-import Section from "./components/Navigation/Section"
 
 
 const App = () => {
@@ -21,12 +19,7 @@ const App = () => {
           <Redirect to="/Home" />
         </Route>
         <Route exact path='/Shop' component={Shop} />
-        <Section
-          title="Media"
-          subtitle=''
-          dark={true}
-          id="Media"
-        />
+        <Route exact path="/Media" component={Media} />
         <Route component={NotFound}/>
       </Switch>
       <Footer />
