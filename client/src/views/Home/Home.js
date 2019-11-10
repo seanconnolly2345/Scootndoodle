@@ -9,6 +9,5 @@ export const Home = () => (
     <React.Fragment>
         <Video />
         <About />
-        <Media />
     </React.Fragment>
 )

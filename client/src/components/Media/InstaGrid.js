@@ -37,14 +37,11 @@ const InstaGrid = ({ classes, media, account, status}: Props) => {
             <ButtonBase
               href={postLink || `https://www.instagram.com/${account}/`}
             >
-
-              <div className="image">
-                <img
-                  src={displayImage}
-                  alt={accessibilityCaption || 'Instagram picture'}
-                  className={classes.image}
-                />
-              </div>
+              <img
+                src={displayImage}
+                alt={accessibilityCaption || 'Instagram picture'}
+                className={classes.image}
+              />
             </ButtonBase>
           </Grid>
         ))}
