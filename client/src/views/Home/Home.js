@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import { Video } from '../../components/Video/Video'
 import { About } from '../../components/About/About'
-import { Media } from '../../components/Media/Media';
+import Media from '../../components/Media/Media';
 import { ShopPreview } from '../../components/ShopPreview/ShopPreview'
 import ReviewSlider from '../../components/Reviews/ReviewSlider';
 import sliderData from '../../assets/reviews'
@@ -20,6 +20,7 @@ export const Home = () => (
         <MissionStatement />
         <ShopPreview />
         <About />
+        <Media />
     </React.Fragment>
 )
 
