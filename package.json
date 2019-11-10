@@ -21,11 +21,15 @@
   "author": "Dakota Rennemann",
   "license": "MIT",
   "dependencies": {
+<<<<<<< HEAD
     "@material-ui/core": "^4.6.0",
+=======
+>>>>>>> 53a169ee3d650737c2cf0b3bb8de180837e4ad92
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "concurrently": "^4.1.0",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "form-data": "^2.5.1",
     "instafeed.js": "^1.4.1",
     "jquery": "^3.4.1",
@@ -50,6 +54,14 @@
     "supertest": "^4.0.2",
     "utility": "^1.16.1",
     "xhr": "^2.5.0"
+=======
+    "mocha": "^6.2.1",
+    "mongoose": "^5.7.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+>>>>>>> 53a169ee3d650737c2cf0b3bb8de180837e4ad92
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
 }
