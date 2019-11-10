@@ -45,3 +45,7 @@ input[type='text'] {
 .row {
 	margin: 1rem;
 }
+
+.image {
+	padding: 0.2rem;
+}
