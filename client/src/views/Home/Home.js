@@ -20,6 +20,7 @@ export const Home = () => (
         <MissionStatement />
         <ShopPreview />
         <About />
+        <Media />
     </React.Fragment>
 )
 
