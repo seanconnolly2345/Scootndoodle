@@ -25,16 +25,88 @@ const firebase = require('firebase');
 firebase.initializeApp(config);
 
 const db = admin.firestore();
-const isEmail= (email) => {
-    const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(email.match(regEx)) return true;
-    else return false;
-}
+
+
 
 const isEmpty = (string) => {
     if(string.trim() === '') return true;
     else return false;
 }
+
+
+const fireAuth = (req, res, next) => {
+    let idToken;
+    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer ')){
+        idToken = req.headers.authorization.split('Bearer ')[1];
+    } else {
+        console.error('No token found');
+        return res.status(403).json({ error: 'Unauthorized'});
+    }
+    admin.auth().verifyIdToken(idToken)
+    .then(decodedToken => {
+        req.user = decodedToken;
+        return db.collection('users')
+        .where('userId', '==', req.user.uid)
+        .limit(1)
+        .get();
+    })
+    .then(data => {
+        req.user.handle = data.docs[0].data().handle;
+        return next();
+    })
+    .catch(err => {
+        console.error('Error while verifying token');
+        return res.status(403).json(err);
+    })
+}
+
+
+
+app.post('/product', fireAuth , (req, res) => {
+    const newProduct = {
+        description: req.body.description,
+        price: req.body.price,
+        createdAt: new Date().toISOString(),
+        userHandle: req.user.handle
+    };
+    admin.firestore()
+    .collection('products')
+    .add(newProduct)
+    // eslint-disable-next-line promise/always-return
+    .then(doc => {
+        res.json({message: `document ${doc.id} created successfully`});
+    })
+    .catch((err) => {
+        res.status(500).json({ error:' Something went wrong'});
+        console.error(err);
+    });
+
+});
+
+
+
+app.get('/products' , fireAuth ,(req,res) => {
+    admin.firestore()
+    .collection('products')
+    .get()
+    .then((data) => {
+        let products = [];
+        data.forEach((doc) => {
+            products.push({
+                productId: doc.id,
+                description: doc.data().description,
+                price: doc.data().price,
+                createdAt: doc.data().createdAt,
+                userHandle: doc.data().userHandle
+                
+            });
+        });
+        return res.json(products);
+    })
+    .catch((err) => console.error(err));
+});
+
+
 
 
 app.post('/signup', (req, res) => {
@@ -49,9 +121,7 @@ let errors = {};
 if(isEmpty(newUser.email)){
     errors.email = 'Must not be empty'
 }
-else if(!isEmail(newUser.email)){
-    errors.email = 'Must be a valid email address'
-}
+
 if(isEmpty(newUser.password)) errors.password = 'Must not be empty'
 
 if(newUser.password !== newUser.confirmPassword) errors.confirmPassword = 'Passwords must match'
@@ -106,9 +176,11 @@ db.doc(`/users/${newUser.handle}`).get()
 app.post('/login', (req, res) => {
     const user = {
         email: req.body.email,
-        passsword: req.body.password
+        password: req.body.password
     };
+
     let errors = {};
+
     if(isEmpty(user.email)) errors.email = 'Must not be empty';
 
     if(isEmpty(user.password)) errors.password = 'Must not be empty';
@@ -127,7 +199,9 @@ firebase
 })
 .catch((err) => {
     console.error(err);
-    return res.status(500).json({error: err.code});
+    if(err.code === 'auth/wrong-password'){
+        return res.status(403).json({general: 'Wrong password'});
+    } else return res.status(500).json({error: err.code});
     });
 });
 
