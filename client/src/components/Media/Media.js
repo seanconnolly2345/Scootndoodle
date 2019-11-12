@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 import { SocialIcon } from 'react-social-icons'
 import './index.css'
 import InstaGrid from './InstaGrid'
+import { ContactForm } from '../ContactForm/ContactForm'
 
 //library.add(faFacebookSquare); 
 
@@ -25,7 +26,7 @@ class Media extends React.Component {
                             <SocialIcon url='https://www.instagram.com/scootscribbledoodletest/'/>
                         </Row>
                         <Row style={{marginLeft: 0, marginRight: 0}}>
-                            Contact Form
+                            <ContactForm />
                         </Row>
                     </Col>
                     <Col xs={12} md={6}>
