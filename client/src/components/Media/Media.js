@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 import { SocialIcon } from 'react-social-icons'
 import './index.css'
 import InstaGrid from './InstaGrid'
+import { FacebookWidget } from './FacebookWidget'
 import { ContactForm } from '../ContactForm/ContactForm'
 
 //library.add(faFacebookSquare); 
@@ -31,6 +32,7 @@ class Media extends React.Component {
                     </Col>
                     <Col xs={12} md={6}>
                         Facebook Widget goes here
+                        <FacebookWidget />
                     </Col>
                 </Row>
                 <Row>
