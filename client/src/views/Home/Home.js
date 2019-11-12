@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../../assets/logo.svg';
 import './Home.css';
 
-<<<<<<< Updated upstream
 function Home() {
     return (
         <div className="App">
@@ -22,17 +21,5 @@ function Home() {
         </div>
     );
 }
-=======
-export const Home = () => (
-    <React.Fragment>
-        <Navigation />
-        <Video />
-        <ReviewSlider data={sliderData}/>
-        <MissionStatement />
-        <About />
-        <Media />
-    </React.Fragment>
-)
->>>>>>> Stashed changes
 
 export default Home;
