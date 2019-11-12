@@ -1,7 +1,15 @@
 import React from 'react'
-import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import { Form, Row, Col, Button } from 'react-bootstrap'
+
+const handleSubmit = event => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropogation();
+    }
+
+    console.log('contact form submitted!!')
+}
 
 export const ContactForm = () => (
     <Form>
@@ -21,5 +29,11 @@ export const ContactForm = () => (
         <Form.Row>
             <Form.Control as="textarea" rows="4" style={{marginBottom: '1rem'}}/>
         </Form.Row>
+        <Form.Row>
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        </Form.Row>
+        
     </Form>
 )

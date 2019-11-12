@@ -3,7 +3,7 @@ import React from 'react'
 export const FacebookWidget = () => (
     <React.Fragment>
         <div 
-            class="fb-page" 
+            className="fb-page" 
             data-href="https://www.facebook.com/facebook" 
             data-tabs="timeline" 
             data-width="" 
@@ -15,7 +15,7 @@ export const FacebookWidget = () => (
         >
             <blockquote 
                 cite="https://www.facebook.com/facebook" 
-                class="fb-xfbml-parse-ignore"
+                className="fb-xfbml-parse-ignore"
             >
             <a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
     </React.Fragment>
