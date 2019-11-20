@@ -22,7 +22,7 @@ class Media extends React.Component {
                             <SocialIcon url='https://www.facebook.com/' className='icon-padding' />
                             <SocialIcon url='https://www.instagram.com/scootscribbledoodletest/' style={{marginLeft: '1rem'}} />
                         </Row>
-                        <Row style={{marginLeft: 0, marginRight: 0}}>
+                        <Row className='justify-content-center' style={{marginLeft: 0, marginRight: 0}}>
                             <ContactForm />
                         </Row>
                     </Col>
