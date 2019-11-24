@@ -13,7 +13,7 @@ import { MissionStatement } from '../../components/Mission/MissionStatement';
 //import Container from 'react-bootstrap/Container'
 
 export const Home = () => (
-    <React.Fragment>
+    <div>
         <Navigation />
         <Video />
         <ReviewSlider data={sliderData}/>
@@ -21,7 +21,7 @@ export const Home = () => (
         <ShopPreview />
         <About />
         <Media />
-    </React.Fragment>
+    </div>
 )
 
 // https://github.com/reactjs/react-modal
