@@ -10,12 +10,15 @@ import Footer from '../../components/Footer/Footer';
 import Navigation from '../../components/Navigation/Navigation';
 import Row from 'react-bootstrap/Row';
 import { MissionStatement } from '../../components/Mission/MissionStatement';
-//import Container from 'react-bootstrap/Container'
+import TableViewer from'../../components/Admin/OrderTable.js';
+
+
 
 export const Home = () => (
     <React.Fragment>
         <Navigation />
         <Video />
+        <TableViewer />
         <ReviewSlider data={sliderData}/>
         <MissionStatement />
         <ShopPreview />
