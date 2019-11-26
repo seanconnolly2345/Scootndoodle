@@ -56,6 +56,7 @@
     "react-scroll": "^1.7.14",
     "react-slick": "^0.25.2",
     "react-social-icons": "^4.1.0",
+    "reactjs-popup": "^1.5.0",
     "reactstrap": "^8.1.1",
     "recompose": "^0.30.0",
     "scroll-into-view": "^1.12.2",

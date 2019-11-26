@@ -18,7 +18,7 @@ export const Home = () => (
     <React.Fragment>
         <Navigation />
         <Video />
-        <TableViewer />
+    
         <ReviewSlider data={sliderData}/>
         <MissionStatement />
         <ShopPreview />

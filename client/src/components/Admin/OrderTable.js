@@ -1,10 +1,11 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import Icon from '@material-ui/core/Icon';
-
+import {Row, Button} from 'react-bootstrap'
 
 
 export default function OrderTable() {
+
   const [state, setState] = React.useState({
     columns: [
       { title: 'Name', field: 'name' },
@@ -25,7 +26,8 @@ export default function OrderTable() {
   });
 
   return (
-    <MaterialTable
+   
+    <MaterialTable 
     title="Orders"
     columns={state.columns}
     data={state.data}
@@ -39,7 +41,7 @@ export default function OrderTable() {
               data.push(newData);
               return { ...prevState, data };
             });
-          }, 600);
+          }, 1000);
         }),
       onRowUpdate: (newData, oldData) =>
         new Promise(resolve => {
@@ -52,7 +54,7 @@ export default function OrderTable() {
                 return { ...prevState, data };
               });
             }
-          }, 600);
+          }, 1000);
         }),
       onRowDelete: oldData =>
         new Promise(resolve => {
@@ -63,9 +65,10 @@ export default function OrderTable() {
               data.splice(data.indexOf(oldData), 1);
               return { ...prevState, data };
             });
-          }, 600);
+          }, 1000);
         }),
     }}
   />
+                
   );
 }
