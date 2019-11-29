@@ -99,3 +99,5 @@ export const ContactForm = () => (
 // look at formik library for validation and submission
 
 // https://blog.mailtrap.io/react-send-email/
+
+//https://sheelahb.com/blog/how-to-send-email-from-react-without-a-backend/
