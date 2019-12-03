@@ -1,0 +1,60 @@
+.button.hover {
+	background-color: aquamarine;
+	color: black;
+	font-size: large;
+}
+input[type=tel] {
+	width: 30%;
+	padding: 12px 20px;
+	margin: 4px 2px;
+	box-sizing: border-box;
+	border: none;
+	background-color: aquamarine;
+	color: black;
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #F4511E;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: ‘\00bb’;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 17px;
+}
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+input[type=teli] {
+	width: 14.7%;
+	padding: 12px 20px;
+	margin: 4px 2px;
+	box-sizing: border-box;
+	border: none;
+	background-color: aquamarine;
+	color: black;
+	font-size: 14px;
+}
