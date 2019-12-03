@@ -20,9 +20,7 @@ const PopupExample = () => (
 
 export const Orders = () => (
     <React.Fragment> 
-       <Row>
-        <Navigation/>
-        </Row>
+       
 
         <body>
         <TableViewer /> 
