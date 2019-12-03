@@ -13,13 +13,13 @@ module.exports.init = () => {
         - reference README for db uri
     */
     
-    /*
-    mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
+    
+    mongoose.connect(process.env.DB_URI || require('./config').db, {
         useNewUrlParser: true
     });
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
-    */
+    
     
 
     // initialize app
@@ -80,6 +80,10 @@ module.exports.init = () => {
                 console.log('Email sent' + info.response)
             }
         })
+    })
+
+    app.post('/api/payment', (req, res) => {
+        console.log(req.body)
     })
 
     return app
