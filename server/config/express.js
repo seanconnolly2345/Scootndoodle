@@ -3,7 +3,9 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    exampleRouter = require('../routes/examples.server.routes');
+    exampleRouter = require('../routes/examples.server.routes'),
+    nodemailer = require("nodemailer");
+    //formRouter = require('..routes/form.server.routes')
 
 module.exports.init = () => {
     /* 
@@ -32,6 +34,8 @@ module.exports.init = () => {
     // add a router
     app.use('/api/example', exampleRouter);
 
+    //app.use('api/form', )
+
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
         app.use(express.static(path.join(__dirname, '../../client/build')));
@@ -41,6 +45,42 @@ module.exports.init = () => {
             res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
         });
     }
+
+    app.post('/api/form', (req, res) => {
+        console.log(req.body)
+        const htmlEmail =`
+        <h3>Customer's Contact Details</h3>
+        <ul>
+            <li>Name: ${req.body[0].name}</li>
+            <li>Email: ${req.body[0].email}</li>
+        </ul>
+        <h3>Customer's Message</h3>
+        <p>${req.body[0].message}</p>
+        `
+
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: req.body[1],
+                pass: req.body[2]
+            }
+        })
+
+        var mailOptions = {
+            from: req.body.email,
+            to: req.body[1],
+            subject: req.body.subject,
+            html: htmlEmail
+        }
+
+        transporter.sendMail(mailOptions, function(err, info) {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('Email sent' + info.response)
+            }
+        })
+    })
 
     return app
 }
