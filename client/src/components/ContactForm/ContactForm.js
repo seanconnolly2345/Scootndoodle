@@ -62,6 +62,7 @@ export class ContactForm extends React.Component {
                         validationSchema={user}
                         onSubmit={(values) => { 
                             this.handleSubmit(values)
+                            alert('Message sent! Thank you!')
                         }}
                         initialValues={{
                             name: '',

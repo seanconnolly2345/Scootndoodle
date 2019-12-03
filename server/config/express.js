@@ -67,9 +67,9 @@ module.exports.init = () => {
         })
 
         var mailOptions = {
-            from: req.body.email,
+            from: req.body[0].email,
             to: req.body[1],
-            subject: req.body.subject,
+            subject: req.body[0].subject,
             html: htmlEmail
         }
 
