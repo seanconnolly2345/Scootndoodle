@@ -11,7 +11,7 @@ module.exports.init = () => {
     /* 
         connect to database
         - reference README for db uri
-    */
+    
     
     
     mongoose.connect(process.env.DB_URI || require('./config').db, {
@@ -21,7 +21,7 @@ module.exports.init = () => {
     mongoose.set('useFindAndModify', false);
     
     
-
+*/
     // initialize app
     const app = express();
 

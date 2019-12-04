@@ -11,6 +11,7 @@ import Section from "./components/Navigation/Section"
 
 import './App.css'
 import AdminPortal from './views/Admin/AdminPortal';
+import {Orders} from './views/Admin/Orders';
 import PaymentTest from './views/PaymentTesting/PaymentTest';
 //import productPhotos from './Shop/Cart/DSC_0056.JPG'
 import { Link } from 'react-router-dom';
@@ -31,6 +32,7 @@ const App = () => {
         </Route>
         <Route exact path='/Shop' component={Shop} />
         <Route exact path='/AdminPortal' component={AdminPortal} />
+        <Route exact path='/Orders' component={Orders} />
         <Route exact path='/PayTest' component={PaymentTest} />
         <Route exact path='/HippoController' component={HippoController} />
         <Route exact path='/CartController' component={CarController} />
